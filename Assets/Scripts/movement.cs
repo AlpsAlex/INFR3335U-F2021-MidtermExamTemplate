@@ -15,19 +15,15 @@ public class movement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         float mouseRotate = Input.GetAxis("Mouse X") * turningSpeed;
         transform.Rotate(0, mouseRotate, 0);
-
-        //Horizontal zxis -> left and right keys (or A and D)
+        
         float horizontal = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
         transform.Translate(horizontal, 0, 0);
-        //transform.Rotate(0, Input.GetAxis("Horizontal")*2, 0);
-
-        //Vertical Axis -> up and down keys (or W and S)
+        
         float vertical = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
         transform.Translate(0, 0, vertical);
 
